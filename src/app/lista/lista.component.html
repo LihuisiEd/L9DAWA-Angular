@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Lista de tareas</h1>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nueva tarea" [(ngModel)]="newTask">
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="addTask()">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="list-group">
+    <li *ngFor="let task of tasks" class="list-group-item">
+      {{ task }}
+      <button class="btn btn-danger btn-sm float-right" (click)="removeTask(task)">Eliminar</button>
+    </li>
+  </ul>
+</div>
